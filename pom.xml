@@ -10,6 +10,7 @@
 		<module>Java-Concurrency-in-Practice</module>
 		<module>Java-ByteCode</module>
 		<module>Spring-Cloud-Finchley</module>
+		<module>Activiti</module>
 	</modules>
 	<packaging>pom</packaging>
 
