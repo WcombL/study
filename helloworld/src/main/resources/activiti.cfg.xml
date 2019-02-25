@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+
+    <property name="jdbcUrl" value="jdbc:mysql://192.168.1.216:3306/act?characterEncoding=UTF-8&amp;autoReconnect=true" />
+    <property name="jdbcDriver" value="com.mysql.cj.jdbc.Driver" />
+    <property name="jdbcUsername" value="root" />
+    <property name="jdbcPassword" value="root" />
+
+    <property name="databaseSchemaUpdate" value="true" />
+    
+    <!-- 是否开启ping检测 -->
+    <property name="jdbcPingEnabled" value="true" />
+    <!-- 设置ping检测时间间隔，通常用于检测超时连接（默认为0，即当开启检测后每次从连接词中获取连接以及放回连接池都需要检测） -->
+    <property name="jdbcPingConnectionNotUsedFor" value="3600000" />
+	<!-- 检查连接正确的语句，默认为"NO PING QUERY SET"，即没有，使用会导致抛异常 -->
+    <property name="jdbcPingQuery" value="SELECT 1" />
+    
+	<!-- 
+    <property name="asyncExecutorActivate" value="false" />
+
+    <property name="mailServerHost" value="mail.my-corp.com" />
+    <property name="mailServerPort" value="5025" />
+     -->
+  </bean>
+
+</beans>
